@@ -28,6 +28,9 @@ mlp = MLP_dropOut.MLP([784,100,10], learning_rate=0.35, n_iter=10, auto_update_l
 mlp.fit(Xtrain, Ytrain)
 
 print "Score apprentissage de {} % avec un échantillon d'apprentissage comptant {} elements".format(mlp.score(X[0:ending_index],Y[0:ending_index]), ending_index)
-mlp.wdecay*0,1
 
+
+#il faut mettre à jour les poids (*0,1 si dropOut avec une proba de 0,1)!!
+
+#il faut aussi mettre un drop out sur la couche d entree
 print "Score generalisation de {} % ".format(mlp.score(X[ending_index:],Y[ending_index:]))
